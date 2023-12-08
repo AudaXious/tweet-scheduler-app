@@ -18,7 +18,7 @@ function Login() {
   }
   function handleLogin() {
     //post to auth endpoint
-    window.open("http://localhost:4000/auth/twitter", "_self");
+    window.open("https://twitter-auth.audaxious.com//auth/twitter", "_self");
   }
 
   function handleLogout() {
