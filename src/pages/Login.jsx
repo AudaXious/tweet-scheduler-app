@@ -31,7 +31,8 @@ function Login() {
     async function getUser() {
       try {
         const response = await axios.get(
-          "https://twitter-auth.audaxious.com/auth/login/success",
+          // "https://twitter-auth.audaxious.com/auth/login/success",
+          "https://twitter-auth.audaxious.com/",
           {
             withCredentials: true,
           }
