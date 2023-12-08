@@ -43,11 +43,8 @@ function Login() {
         console.error("Error fetching user:", error);
       }
     }
-    if (window.location.pathname === "/auth/callback") {
-      // If the current URL matches the callback path,
-      // fetch the user data using the 'getUser' function
-      getUser();
-    }
+
+    getUser();
   }, []);
 
   if (!isAuthenticated) {
