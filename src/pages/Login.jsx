@@ -23,7 +23,7 @@ function Login() {
 
   function handleLogout() {
     //post to auth endpoint
-    window.open("http://localhost:4000/auth/logout", "_self");
+    window.open("https://twitter-auth.audaxious.com/auth/logout", "_self");
     setAuthUser(null);
   }
 
@@ -31,7 +31,7 @@ function Login() {
     async function getUser() {
       try {
         const response = await axios.get(
-          "http://localhost:4000/auth/login/success",
+          "https://twitter-auth.audaxious.com/auth/login/success",
           {
             withCredentials: true,
           }
