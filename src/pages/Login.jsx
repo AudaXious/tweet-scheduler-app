@@ -27,41 +27,25 @@ function Login() {
     setAuthUser(null);
   }
 
-  // useEffect(() => {
-  //   async function getUser() {
-  //     try {
-  //       const response = await axios.get(
-  //         "https://twitter-auth.audaxious.com/auth/login/success",
-  //         {
-  //           withCredentials: true,
-  //         }
-  //       );
+  useEffect(() => {
+    async function getUser() {
+      try {
+        const response = await axios.get(
+          "https://twitter-auth.audaxious.com/auth/login/success",
+          {
+            withCredentials: true,
+          }
+        );
 
-  //       console.log(response.data.user.name);
-  //       setAuthUser(response.data.user);
-  //     } catch (error) {
-  //       console.error("Error fetching user:", error);
-  //     }
-  //   }
-
-  //   getUser();
-  // }, []);
-
-  async function getUser() {
-    try {
-      const response = await axios.get(
-        "https://twitter-auth.audaxious.com/auth/login/success",
-        {
-          withCredentials: true,
-        }
-      );
-
-      console.log(response.data.user.name);
-      setAuthUser(response.data.user);
-    } catch (error) {
-      console.error("Error fetching user:", error);
+        console.log(response.data.user.name);
+        setAuthUser(response.data.user);
+      } catch (error) {
+        console.error("Error fetching user:", error);
+      }
     }
-  }
+
+    getUser();
+  }, []);
 
   if (!isAuthenticated) {
     return (
@@ -69,7 +53,7 @@ function Login() {
         <h3>Connect your Twitter</h3>
         <div className="card">
           <button onClick={handleLogin}>Login with twitter</button>
-          <button onClick={getUser}>get user</button>
+
           <p>Access AudaXious Content Automation tools</p>
           <p>{isAuthenticated && "Welcome" + authUser.name}</p>
         </div>
