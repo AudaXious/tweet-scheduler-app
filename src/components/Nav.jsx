@@ -8,6 +8,7 @@ export default function Nav({
   handleGenerate,
   setLoggedinUser,
   loggedinUser,
+  setManualActive,
 }) {
   async function handleLogout() {
     await signoutUser();
@@ -58,7 +59,7 @@ export default function Nav({
               justifyContent: "center",
               height: "25px",
             }}
-            onClick={handleManual}
+            onClick={() => setManualActive(true)}
           >
             Manual Tweet
           </button>
@@ -67,7 +68,7 @@ export default function Nav({
               justifyContent: "center",
               height: "25px",
             }}
-            onClick={handleGenerate}
+            onClick={() => setManualActive(false)}
           >
             Generate Tweet
           </button>

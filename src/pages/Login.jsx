@@ -4,17 +4,11 @@ import ScheduleTweet from "./ScheduleTweet";
 
 import GenerateTweet from "./GenerateTweet";
 
-function Login({ authUser, setAuthUser }) {
-  const [manualActive, setManualActive] = useState(true);
+function Login({ authUser, setAuthUser, manualActive }) {
+  // const [manualActive, setManualActive] = useState(true);
 
   const isAuthenticated = !!authUser;
 
-  function handleManual() {
-    setManualActive(true);
-  }
-  function handleGenerate() {
-    setManualActive(false);
-  }
   function handleLogin() {
     //post to auth endpoint
     window.open("https://twitter-auth.audaxious.com/auth/twitter", "_self");
