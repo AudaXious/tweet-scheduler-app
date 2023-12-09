@@ -63,7 +63,7 @@ export default function ScheduleTweet({ onLogout, authUser }) {
   }
 
   return (
-    <div style={{ width: "490px" }}>
+    <div style={{ width: "490px", marginBottom: "5px", marginTop: "5px" }}>
       <div
         style={{
           display: "flex",
