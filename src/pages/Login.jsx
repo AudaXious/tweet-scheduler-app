@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ScheduleTweet from "./ScheduleTweet";
-import Nav from "../components/Nav";
+
 import GenerateTweet from "./GenerateTweet";
 
 function Login({ authUser, setAuthUser }) {
@@ -62,12 +62,6 @@ function Login({ authUser, setAuthUser }) {
   if (isAuthenticated) {
     return (
       <div style={{ width: "495px" }}>
-        <Nav
-          onLogout={handleLogout}
-          authUser={authUser}
-          handleGenerate={handleGenerate}
-          handleManual={handleManual}
-        />
         {manualActive ? (
           <ScheduleTweet authUser={authUser} />
         ) : (
