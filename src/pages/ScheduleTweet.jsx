@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
 import { URLS } from "../constants/URL";
+import Loading from "../components/Loading";
 
 export default function ScheduleTweet({ onLogout, authUser }) {
   const [scheduleDate, setScheduleDate] = useState(""); // State for date
   const [tweetTime, setTweetTime] = useState("");
   const [enteredText, setEnteredText] = useState(""); // State for time
   const [upload, setUpload] = useState("");
+  const [isScheduling, setIsScheduling] = useState(false);
 
   function handleUpload(event) {
     const file = event.target.files[0];
@@ -39,6 +41,7 @@ export default function ScheduleTweet({ onLogout, authUser }) {
   };
 
   async function handleSubmit() {
+    setIsScheduling(true);
     const formData = new FormData();
 
     formData.append("tweet", enteredText);
@@ -57,9 +60,14 @@ export default function ScheduleTweet({ onLogout, authUser }) {
         data: formData,
       });
       console.log(response.data);
+      setIsScheduling(false);
     } catch (error) {
       console.log(error.message);
     }
+  }
+
+  {
+    isScheduling && <Loading />;
   }
 
   return (
