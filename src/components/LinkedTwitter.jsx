@@ -4,11 +4,11 @@ export default function LinkedTwitter({ authUser }) {
       <h4>
         Linked Twitter:{" "}
         <a
-          href={`https://twitter.com/${authUser.name}`}
+          href={`https://twitter.com/${authUser.screenName}`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {authUser.screenName}
+          {authUser.name}
         </a>
       </h4>
     </div>
