@@ -13,6 +13,7 @@ export default function Nav({
   async function handleLogout() {
     await signoutUser();
     setLoggedinUser(null);
+    window.open("https://twitter-auth.audaxious.com/auth/logout", "_self");
   }
 
   if (!authUser) {
