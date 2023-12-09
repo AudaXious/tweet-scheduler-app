@@ -17,7 +17,7 @@ function App() {
           loggedinUser={loggedinUser}
         />
       )}
-      {loggedinUser && authUser && <LinkedTwitter />}
+      {loggedinUser && authUser && <LinkedTwitter authUser={authUser} />}
       <CreateAccountSignin
         setIsLoggedIn={setIsLoggedIn}
         loggedinUser={loggedinUser}
