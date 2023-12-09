@@ -6,6 +6,7 @@ export default function CreateAccountSignin({
   setLoggedinUser,
   loggedinUser,
   authUser,
+  setAuthUser,
 }) {
   useEffect(() => {
     async function getAuthUser() {
@@ -17,7 +18,7 @@ export default function CreateAccountSignin({
   }, []);
 
   if (loggedinUser) {
-    return <Login authUser={authUser} />;
+    return <Login authUser={authUser} setAuthUser={setAuthUser} />;
   }
 
   if (!loggedinUser) {
