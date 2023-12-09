@@ -25,7 +25,7 @@ export default function Nav({
             justifyContent: "flex-end",
           }}
         >
-          <span style={{ marginRight: "10px" }}>{loggedinUser.email} </span>
+          <span style={{ marginRight: "10px" }}> </span>
           <button
             style={{
               justifyContent: "center",
@@ -70,7 +70,7 @@ export default function Nav({
             Generate Tweet
           </button>
 
-          <span style={{ marginRight: "10px" }}>{loggedinUser.email}</span>
+          <span style={{ marginRight: "10px" }}></span>
           <button
             style={{
               justifyContent: "center",
