@@ -2,16 +2,6 @@ import axios from "axios";
 import { useState } from "react";
 import { URLS } from "../constants/URL";
 
-const generatedTweets = [
-  "Hello world! 🌍💻 Did you know that the iconic phrase was first used in programming in the year 1972? It's amazing how it has become a symbol of new beginnings and endless possibilities in the coding world. Embrace the world of programming and let your creativity soar! #HelloWorld #ProgrammingMagic #NewBeginnings",
-
-  "Happy coding, everyone! 🙌✨ Let's take a moment to appreciate the phrase 'Hello world' and its positive impact on programming. This timeless tradition has helped countless beginners dive into the world of coding and discover their passion. Cheers to the beautiful journey that starts with a simple 'Hello' and leads to infinite opportunities! 💪🌟 #HelloWorld #CodingJourney #InfinitePossibilities",
-
-  "Hello, fellow developers! 🖥️🌍 Today, let's celebrate the significance of 'Hello world' in programming. This universal phrase welcomes us to a realm of innovation, collaboration, and continuous learning. Embrace the joy of creating new, extraordinary things through code and spread the positivity it brings! 🌈✨ #HelloWorld #CodingCommunity #JoyOfCreation",
-
-  "A warm and heartfelt 'Hello world' to all the programming enthusiasts out there! 💖🌐 Let's cherish this iconic phrase, which introduced us to the fascinating world of coding. Together, we can inspire, solve problems, and build a brighter future. Believe in the power of 'Hello world' and let it be the driving force behind your coding journey! 🚀💻 #HelloWorld #CodingInspiration #BrighterFuture",
-];
-
 export default function GenerateTweet({ onLogout, authUser }) {
   const [scheduleDate, setScheduleDate] = useState(""); // State for date
   const [tweetTime, setTweetTime] = useState("");

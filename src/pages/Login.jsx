@@ -1,13 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ScheduleTweet from "./ScheduleTweet";
-import { URLS } from "../constants/URL";
 import Nav from "../components/Nav";
 import GenerateTweet from "./GenerateTweet";
 
-function Login() {
-  const [authUser, setAuthUser] = useState();
+function Login({ authUser, setAuthUser }) {
   const [manualActive, setManualActive] = useState(true);
+
   const isAuthenticated = !!authUser;
 
   function handleManual() {
@@ -43,16 +42,15 @@ function Login() {
         console.error("Error fetching user:", error);
       }
     }
-
     getUser();
   }, []);
 
   if (!isAuthenticated) {
     return (
       <>
-        <h3>Connect your Twitter</h3>
+        <h3>Link your Twitter to start engaging</h3>
         <div className="card">
-          <button onClick={handleLogin}>Login with twitter</button>
+          <button onClick={handleLogin}>Link Now</button>
 
           <p>Access AudaXious Content Automation tools</p>
           <p>{isAuthenticated && "Welcome" + authUser.name}</p>

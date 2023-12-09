@@ -71,9 +71,9 @@ export default function ScheduleTweet({ onLogout, authUser }) {
           alignItems: "center",
         }}
       >
-        <h3 style={{ marginRight: "70px", alignItems: "center" }}>
+        <h5 style={{ marginRight: "70px", alignItems: "center" }}>
           Enter Tweet and schedule it
-        </h3>
+        </h5>
       </div>
       <div className="flex flex-col">
         <p style={{ marginBottom: "5px" }}>Tweet</p>

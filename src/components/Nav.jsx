@@ -1,49 +1,87 @@
+import { useState } from "react";
+import { auth } from "../firebase/config";
+import { signoutUser } from "../firebase/firebaseMethods";
+
 export default function Nav({
-  onLogout,
   authUser,
   handleManual,
   handleGenerate,
+  setLoggedinUser,
+  loggedinUser,
 }) {
-  return (
-    <div style={{ marginBottom: "20px" }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-around",
-        }}
-      >
-        <button
-          style={{
-            justifyContent: "center",
-            height: "25px",
-          }}
-          onClick={handleManual}
-        >
-          Manual Tweet
-        </button>
-        <button
-          style={{
-            justifyContent: "center",
-            height: "25px",
-          }}
-          onClick={handleGenerate}
-        >
-          Generate Tweet
-        </button>
+  async function handleLogout() {
+    await signoutUser();
+    setLoggedinUser(null);
+  }
 
-        <span style={{ marginRight: "10px" }}>Welcome {authUser.name} </span>
-        <button
+  if (!authUser) {
+    return (
+      <div style={{ marginBottom: "20px" }}>
+        <div
           style={{
-            justifyContent: "center",
-            height: "25px",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-end",
           }}
-          onClick={onLogout}
         >
-          Logout
-        </button>
+          <span style={{ marginRight: "10px" }}>{loggedinUser.email} </span>
+          <button
+            style={{
+              justifyContent: "center",
+              height: "25px",
+            }}
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+  if (authUser) {
+    return (
+      <div style={{ marginBottom: "20px" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <button
+            style={{
+              //  position: "absolute",
+              justifyContent: "center",
+              height: "25px",
+            }}
+            onClick={handleManual}
+          >
+            Manual Tweet
+          </button>
+          <button
+            style={{
+              justifyContent: "center",
+              height: "25px",
+            }}
+            onClick={handleGenerate}
+          >
+            Generate Tweet
+          </button>
+
+          <span style={{ marginRight: "10px" }}>{loggedinUser.email}</span>
+          <button
+            style={{
+              justifyContent: "center",
+              height: "25px",
+            }}
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    );
+  }
 }
