@@ -66,8 +66,8 @@ export default function ScheduleTweet({ onLogout, authUser }) {
     }
   }
 
-  {
-    isScheduling && <Loading />;
+  if (isScheduling) {
+    return <Loading />;
   }
 
   return (
